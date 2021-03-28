@@ -19,18 +19,18 @@ function App() {
             <div className={style.container}>
                 <Router>
                     <div className={style.header}>
-                        <NavLink exact to="/recruit-agency-form" activeClassName={style.activeTab}
+                        <NavLink exact to="/" activeClassName={style.activeTab}
                                  className={style.personalInfoTab}>
                             PERSONAL INFO
                         </NavLink>
-                        <NavLink exact to="/recruit-agency-form/skills" activeClassName={style.activeTab}
+                        <NavLink exact to="/skills" activeClassName={style.activeTab}
                                  className={style.skillsTab}>
                             SKILLS
                         </NavLink>
                     </div>
                     <Switch>
-                        <Route exact path="/recruit-agency-form" render={() => <PersonalInfo/>}/>
-                        <Route exact path="/recruit-agency-form/skills" render={() => <Skills/>}/>
+                        <Route exact path="/" render={() => <PersonalInfo/>}/>
+                        <Route exact path="/skills" render={() => <Skills/>}/>
                     </Switch>
                 </Router>
             </div>
