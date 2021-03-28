@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {BrowserRouter as Router, NavLink, Route, Switch} from 'react-router-dom';
 import PersonalInfo from "./components/PersonalInfo/PersonalInfo";
 import Skills from "./components/Skills/Skills";
 import style from './App.module.scss'
+import {useDispatch} from "react-redux";
+import {getOccupations} from "./redux/staff-reducer";
 
 function App() {
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(getOccupations)
+    }, [dispatch]);
+
     return (
         <div className={style.app}>
             <div className={style.container}>

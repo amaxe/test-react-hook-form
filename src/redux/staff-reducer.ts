@@ -112,6 +112,7 @@ export const getOccupations = async (dispatch: ThunkDispatchType) => {
         dispatch(setLoading(true))
         console.log('fetching data... ')
         let res = await API.getOccupations()
+        console.log("res: ", res)
         dispatch(setLoading(false))
         let data = res.data[0].occupations
         dispatch(setOccupations(data))
@@ -125,7 +126,7 @@ export const addNewEmployee = (payload: EmployeeType): ThunkType => async (dispa
     try {
         console.log("sending data... ", payload)
         let res = await API.setNewEmployee(payload)
-        console.log(res)
+        console.log("res: ", res)
         dispatch(setNewEmployee(payload))
     } catch (e) {
         console.log(e)
@@ -135,8 +136,8 @@ export const addNewEmployee = (payload: EmployeeType): ThunkType => async (dispa
 export const addSkills = (payload: Array<SkillType>): ThunkType => async (dispatch: ThunkDispatchType) => {
     try {
         console.log("sending data... ", payload)
-        let res =await API.setSkills(payload)
-        console.log(res)
+        let res = await API.setSkills(payload)
+        console.log("res: ", res)
         dispatch(setSkills(payload))
     } catch (e) {
         console.log(e)
