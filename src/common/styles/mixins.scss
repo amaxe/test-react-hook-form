@@ -1,0 +1,50 @@
+@mixin content() {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px;
+  flex-grow: 1;
+}
+
+@mixin saveBtn() {
+  align-self: flex-end;
+  height: 40px;
+  width: 100px;
+  background-color: darkblue;
+  font-size: 15px;
+  color: white;
+  border-radius: 7px;
+  margin-top: 25px;
+  border: none;
+  outline: none;
+}
+
+@mixin inputField() {
+  height: 40px;
+  border-radius: 7px;
+  border: 1px solid lightgrey;
+  width: 320px;
+}
+
+@mixin skillBtn($bgColor) {
+  background-color: $bgColor;
+  color: white;
+  height: 25px;
+  width: 55px;
+  margin-left: 15px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+@mixin display($display, $flexDir) {
+  display: $display;
+  flex-direction: $flexDir;
+}
+
+@mixin hover($bgColor) {
+  cursor: pointer;
+  background-color: $bgColor;
+}

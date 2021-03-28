@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, NavLink, Route, Switch} from 'react-router-dom';
+import PersonalInfo from "./components/PersonalInfo/PersonalInfo";
+import Skills from "./components/Skills/Skills";
+import style from './App.module.scss'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className={style.app}>
+            <div className={style.container}>
+                <Router>
+                    <div className={style.header}>
+                        <NavLink exact to="/recruit-agency-form" activeClassName={style.activeTab}
+                                 className={style.personalInfoTab}>
+                            PERSONAL INFO
+                        </NavLink>
+                        <NavLink exact to="/recruit-agency-form/skills" activeClassName={style.activeTab}
+                                 className={style.skillsTab}>
+                            SKILLS
+                        </NavLink>
+                    </div>
+                    <Switch>
+                        <Route exact path="/recruit-agency-form" render={() => <PersonalInfo/>}/>
+                        <Route exact path="/recruit-agency-form/skills" render={() => <Skills/>}/>
+                    </Switch>
+                </Router>
+            </div>
+        </div>
+    );
 }
 
 export default App;

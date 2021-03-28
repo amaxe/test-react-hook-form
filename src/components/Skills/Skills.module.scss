@@ -1,0 +1,50 @@
+@import "./src/common/styles/mixins";
+@import "./src/common/styles/variables";
+
+.content {
+  @include content();
+
+  .skillsBlock {
+    @include display(flex, column);
+    align-items: flex-start;
+
+    .skill {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      input {
+        @include inputField;
+      }
+
+      .addBtn {
+        @include skillBtn(darkblue)
+      }
+
+      .addBtn:hover {
+        @include hover(blue)
+      }
+
+      .removeBtn {
+        @include skillBtn(salmon)
+      }
+
+      .removeBtn:hover {
+        @include hover(#f8a59a)
+      }
+    }
+  }
+
+  .saveBtn {
+    @include saveBtn;
+  }
+
+  .saveBtn:hover {
+    @include hover(#0000c8)
+  }
+
+  label {
+    margin: 5px 0;
+    font-family: $fontFamily;
+  }
+}

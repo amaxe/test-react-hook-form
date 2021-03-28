@@ -1,0 +1,55 @@
+@import "./src/common/styles/mixins";
+@import "./src/common/styles/variables";
+
+.content {
+  @include content;
+
+  .personalInfoBlock {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .firstName {
+      @include display(flex, column);
+      margin-bottom: 5px;
+    }
+
+    .occupation {
+      @include display(flex, column)
+    }
+
+    .lastName {
+      @include display(flex, column)
+    }
+  }
+
+  input {
+    @include inputField
+  }
+
+  label {
+    margin: 5px 0;
+    font-family: $fontFamily;
+  }
+
+  select {
+    @include inputField
+  }
+
+  .saveBtn {
+    @include saveBtn;
+  }
+
+  .saveBtn:hover {
+    @include hover(#0000c8)
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+  }
+
+  .error::before {
+    content: "⚠ ";
+  }
+}
