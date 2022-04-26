@@ -2,7 +2,7 @@ import axios from "axios";
 import {EmployeeType, SkillType} from "../redux/staff-reducer";
 
 const instance = axios.create({
-    baseURL: "https://605dbaf39386d200171bb218.mockapi.io/api/v1",
+    baseURL: "https://61460ad338339400175fc7cd.mockapi.io/api/v1",
 })
 
 export const API = {
